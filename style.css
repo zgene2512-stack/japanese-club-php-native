@@ -1,0 +1,583 @@
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+color: white;
+}
+
+body {
+background: #112233;
+position: relative;
+}
+
+/* Animation */
+@keyframes navigasi {
+from {
+transform: translateX(-8px);
+opacity: 0;
+} to {
+transform: translateX(0);
+opacity: 1;
+}
+}
+
+/* NAVIGASI */
+header {
+position: sticky;
+top: 0;
+z-index: 1000;
+background: #112233f5;
+}
+
+nav {
+padding: 10px;
+}
+
+.judul {
+text-align: center;
+}
+
+.font-Japan {
+font-size: 30px;
+font-weight: bolder;
+color: #FFB703;
+}
+
+.translate {
+color: gray;
+font-size: 20px;
+font-weight: bold;
+}
+
+.menu {
+cursor: pointer;
+font-size: 30px;
+position: absolute;
+left: 10px;
+top: 25px;
+}
+
+/* MENU NAVIGASI */
+.nav {
+background: #0b1621;
+padding: 10px;
+width: 15%;
+height: 100vh;
+z-index: 10000;
+animation: 1s navigasi forwards;
+position: absolute;
+border-right: 2px solid #FFB703;
+font-family: 'Segoe UI', 'Poppins', 'Noto Sans JP', sans-serif;
+display: flex;
+flex-direction: column;
+}
+
+.nav h3 {
+color: #FFB703;
+font-size: 16px;
+font-weight: 700;
+margin: 0 0 10px 0;
+padding-bottom: 10px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-nav {
+cursor: pointer;
+font-size: 28px;
+color: #FFB703;
+padding: 8px;
+border-radius: 8px;
+transition: color 0.2s;
+margin-bottom: 10px;
+}
+
+.menu-nav:hover {
+color: #fff;
+}
+
+.nav-main {
+flex: 1;
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.nav-bottom {
+padding-top: 10px;
+margin-top: auto;
+border-top: 1px solid rgba(255, 255, 255, 0.1);
+display: flex;
+flex-direction: column;
+gap: 4px;
+}
+
+.nav a {
+display: block;
+padding: 12px 16px;
+text-decoration: none;
+transition: 0.3s;
+font-size: 15px;
+font-weight: 500;
+letter-spacing: 0.3px;
+color: #e0e0e0;
+border-radius: 8px;
+}
+
+.nav a:hover {
+text-decoration: none;
+color: #FFB703;
+background: rgba(255, 183, 3, 0.1);
+padding-left: 20px;
+}
+
+/* Hero */
+.hero {
+height: 33.7em;
+background: rgba(0, 0, 0, 0.5);
+display: flex;
+align-items: center;
+}
+
+.content {
+padding: 35px;
+width: 50%;
+}
+
+.content h1 {
+font-weight: bolder;
+font-size: 70px;
+}
+
+.content h2 {
+font-size: 30px;
+font-weight: bold;
+color: #FFB703;
+margin-bottom: 30px;
+}
+
+.kutipan {
+font-size: 20px;
+margin-bottom: 30px;
+}
+
+.profil, .daftar {
+border: none;
+border-radius: 10px;
+display: inline-block;
+padding: 15px 75px;
+font-size: 20px;
+margin-right: 10px;
+text-decoration: none;
+font-weight: bold;
+transition: 0.3s;
+}
+
+.profil {
+background: orange;
+border: 1px solid yellow;
+color: black;
+}
+
+.daftar {
+background: rgba(128, 128, 128, 0.529);
+border: darkslategray;
+}
+
+.daftar:hover {
+background: white;
+color: black;
+}
+
+.daftar:hover, .profil:hover {
+transform: translateY(-5px) translateX(-5px);
+box-shadow: 4px 4px 10px darkslategray;
+}
+
+/* MAIN */
+.container {
+padding: 40px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+
+.hightlight {
+margin-bottom: 40px;
+}
+
+.hightlight span {
+background: rgba(79, 0, 47, 0.5);
+padding: 10px 20px;
+border: 1px solid rgba(255, 0, 51, 1);
+color: rgba(255, 0, 51, 1);
+font-weight: bolder;
+border-radius: 8px;
+}
+
+.gelar {
+margin-bottom: 20px;
+text-align: center;
+}
+
+.gelar span {
+background: rgba(79, 0, 47, 0.5);
+padding: 10px 20px;
+border: 1px solid rgba(255, 0, 51, 1);
+color: rgba(255, 0, 51, 1);
+font-weight: bolder;
+border-radius: 50px;
+}
+
+h2 {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 3em;
+font-weight: bold;
+margin-bottom: 40px;
+}
+
+h2 span {
+font-size: 0.6em;
+color: gray;
+}
+
+h3 {
+font-size: 2em;
+text-align: center;
+margin-bottom: 10px;
+}
+
+.kartu h4, .card h4, .kaado h4 {
+font-size: 26px;
+text-align: left;
+}
+
+hr {
+margin-bottom: 30px;
+}
+
+.pesan {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 50%;
+padding: 30px;
+font-size: 20px;
+}
+
+.card {
+width: 70%;
+border-radius: 12px;
+background: #182e45ad;
+padding: 30px;
+border: 1px solid darkslategrey;
+transition: 0.3s;
+margin-bottom: 10px;
+cursor: pointer;
+}
+
+.card:hover .japan {
+color: orange;
+}
+
+.grid {
+display: grid;
+grid-template-columns: 0.5fr 1fr;
+}
+
+.seimbang {
+display: grid;
+grid-template-columns: 1.6fr 0.9fr;
+width: 100%;
+height: 100%;
+}
+
+.pembina:hover {
+border: 1px solid orange;
+}
+
+.pembina:hover h3 {
+color: orange;
+}
+
+.gambar {
+background: #112233;
+height: 25rem;
+margin-bottom: 25px;
+}
+
+.gambar img {
+width: 100%;
+height: 100%;
+}
+
+/* JABATAN */
+.pemisah {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+width: 70%;
+height: 100%;
+}
+
+.padding {
+padding: 50px 70px 50px 70px;
+}
+
+.ketua:hover {
+border: 1px solid orange;
+}
+
+.ketua:hover h4 {
+color: orange;
+}
+
+.wakil:hover {
+border: 1px solid blue;
+}
+
+.wakil:hover h4 {
+color: lightseagreen;
+}
+
+/* Divisi */
+.hiasan {
+border-radius: 15px;
+border-left: 5px solid orange;
+width: 95%;
+margin-bottom: 30px;
+}
+
+.hias {
+border-radius: 15px;
+border-left: 5px solid orange;
+width: 95%;
+color: orange;
+}
+
+.gambar2 {
+text-align: center;
+height: 320px;
+}
+
+/* Kegiatan */
+.kaado {
+width: 70%;
+border-radius: 12px;
+background: #182e45ad;
+padding: 30px;
+height: 300px ;
+border: 1px solid darkslategrey;
+transition: 0.3s;
+margin-bottom: 10px;
+cursor: pointer;
+}
+
+.kartu {
+width: 70%;
+border-radius: 12px;
+background: #182e45ad;
+padding: 40px;
+border: 1px solid darkslategrey;
+transition: 0.3s;
+margin-bottom: 10px;
+cursor: pointer;
+text-align: left;
+}
+
+.kartu p, .kaado p{
+font-size: 18px;
+color: gray;
+}
+
+.kartu:hover, .kaado:hover {
+transform: translateY(-10px) translateX(-10px);
+box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.full {
+display: flex;
+justify-content: space-around;
+align-items: center;
+gap: 25px;
+}
+
+.spacing {
+margin: 15px 0 15px 0;
+}
+
+.satu:hover { border: 1px solid salmon; }
+.dua:hover { border: 1px solid orange; }
+.tiga:hover { border: 1px solid lime; }
+.empat:hover { border: 1px solid lightseagreen; }
+
+.satu:hover .atu { color: salmon; }
+.dua:hover .ua { color: orange; }
+.tiga:hover .iga { color: lime; }
+.empat:hover .pat { color: lightseagreen; }
+
+/* PELENGKAP */
+.link-ig {
+padding: 10px 70px 10px 70px;
+display: flex;
+align-items: center;
+border-radius: 20px;
+color: white;
+background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+text-decoration: none;
+font-weight: bolder;
+font-size: 20px;
+transition: 0.3s;
+}
+
+.link-ig:hover {
+transform: translateX(-5px) translateY(-5px);
+box-shadow: 4px 4px 10px rgba(128, 128, 128, 0.529);
+}
+
+/* Penghias */
+.hidden {
+display: none;
+}
+
+footer {
+height: 50px;
+width: 100%;
+background: black;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* ==========================
+LAYOUT TABEL DAFTAR SISWA
+========================== */
+.table-responsive {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    text-align: left;
+    font-size: 15px;
+}
+
+table th {
+background-color: #0b1621;
+color: #FFB703;
+padding: 14px 18px;
+font-weight: bold;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+border-bottom: 2px solid darkslategrey;
+white-space: nowrap;
+}
+
+table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid rgba(47, 79, 79, 0.5);
+    color: #e0e0e0;
+    vertical-align: middle;
+}
+
+table td:nth-child(1) {
+    text-align: center;
+    font-weight: 600;
+    color: #FFB703;
+    width: 50px;
+}
+
+table td:nth-child(2) {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+table td:nth-child(3),
+table td:nth-child(4) {
+    text-align: center;
+    font-weight: 500;
+}
+
+table td:nth-child(5),
+table td:nth-child(6) {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    color: #a9b1c3;
+}
+
+table tbody tr {
+transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+table tbody tr:hover {
+background-color: rgba(255, 183, 3, 0.08);
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table td.actions-cell {
+    white-space: nowrap;
+}
+
+.btn-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    min-width: 80px;
+}
+
+.btn-edit {
+    background: linear-gradient(135deg, #FFB703, #e6a300);
+    color: #112233;
+    box-shadow: 0 2px 6px rgba(255, 183, 3, 0.3);
+}
+
+.btn-edit:hover {
+    background: linear-gradient(135deg, #e6a300, #cc9000);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 183, 3, 0.4);
+    color: #112233;
+}
+
+.btn-hapus {
+    background: linear-gradient(135deg, #FFB703, #e6a300);
+    color: #112233;
+    box-shadow: 0 2px 6px rgba(255, 183, 3, 0.3);
+}
+
+.btn-hapus:hover {
+    background: linear-gradient(135deg, #e6a300, #cc9000);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 183, 3, 0.4);
+    color: #112233;
+}
+
+.btn-action:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
