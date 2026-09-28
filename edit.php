@@ -20,7 +20,7 @@ if (!$siswa) {
 }
 
 $id_divisi_now = "";
-$q_daftar = mysqli_query($mysqli, "SELECT id_divisi FROM daftar WHERE nis_siswa = '$nis'");
+$q_daftar = mysqli_query($mysqli, "SELECT id_divisi FROM daftar WHERE id_siswa = '$nis'");
 if ($q_daftar && $row = mysqli_fetch_assoc($q_daftar)) {
     $id_divisi_now = $row['id_divisi'];
 }
@@ -63,9 +63,9 @@ if (isset($_POST['submit'])) {
     ");
 
     if ($q_daftar && mysqli_num_rows($q_daftar) > 0) {
-        mysqli_query($mysqli, "UPDATE daftar SET id_divisi = '$id_divisi' WHERE nis_siswa = '$nis'");
+        mysqli_query($mysqli, "UPDATE daftar SET id_divisi = '$id_divisi' WHERE id_siswa = '$nis'");
     } else {
-        mysqli_query($mysqli, "INSERT INTO daftar (nis_siswa, id_divisi, tanggal_daftar) VALUES ('$nis', '$id_divisi', NOW())");
+        mysqli_query($mysqli, "INSERT INTO daftar (id_siswa, id_divisi, tanggal_daftar) VALUES ('$nis', '$id_divisi', NOW())");
     }
 
     header("Location: daftar.php");
@@ -95,14 +95,9 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="form-group">
                 <label>Kelas: </label>
-                <select name="kelas">
-                    <option disabled value="">Pilih Kelas</option>
-                    <?php while ($kelas = mysqli_fetch_assoc($res)): ?>
-                        <option value="<?= $kelas['id_kelas']; ?>" <?= ($kelas['id_kelas'] == $siswa['id_kelas']) ? 'selected' : ''; ?>>
-                            <?= $kelas['nama_kelas']; ?>
-                        </option>
-                    <?php endwhile; ?>
-                </select>
+                <input type="text" name="nama_kelas" id="input-kelas" list="list-kelas" placeholder="Masukkan Kelas..." autocomplete="off">
+                <datalist id="list-kelas"></datalist>
+                <input type="hidden" name="kelas" id="kelas_id">
             </div>
             <div class="form-group">
                 <label>Divisi: </label>
@@ -147,6 +142,40 @@ if (isset($_POST['submit'])) {
             </div>
         </form>
     </section>
+        <script>
+        const semuaKelas = [
+            <?php 
+             mysqli_data_seek($res, 0);
+             $arr = [];
+             while($class = mysqli_fetch_assoc($res)) $arr[] = "{id: '".$class['id_kelas']."', nama: '".addslashes($class['nama_kelas'])."'}";
+             echo implode(",", $arr);
+            ?>
+        ];
+        
+        const input = document.getElementById("input-kelas");
+        const list = document.getElementById("list-kelas");
+        const hidden = document.getElementById("kelas_id");
+
+        input.addEventListener("input", (e) => {
+            const search = input.value.toLowerCase();
+            hidden.value = "";
+            list.innerHTML = "";
+            if(!search) return;
+
+            const cocok = semuaKelas.filter((item) => item.nama.toLowerCase().includes(search)).slice(0, 4);
+
+            cocok.forEach(items => {
+                const opt = document.createElement("option");
+                opt.value = items.nama;
+                opt.dataset.id = items.id;
+                list.appendChild(opt);
+            })
+            const pas = cocok.find(k => k.nama === input.value);
+            if(pas) {
+                hidden.value = pas.id;
+            }
+        })
+    </script>
 </body>
 
 </html>
